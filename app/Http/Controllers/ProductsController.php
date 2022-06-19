@@ -20,6 +20,7 @@ class ProductsController extends Controller
         $products = products::all();
 
         return view('products.products', compact('sections', 'products'));
+
     }
 
     /**
@@ -37,6 +38,7 @@ class ProductsController extends Controller
         ]);
         session()->flash('Add', 'تم اضافة المنتج بنجاح ');
         return redirect('/products');
+
     }
 
     /**

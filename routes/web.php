@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-//pc 8 / min : 3
+//pc 8 / min : 300
 Auth::routes();
 
 Route::get('/logout', 'HomeController@logout');

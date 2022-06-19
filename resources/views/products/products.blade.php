@@ -122,6 +122,7 @@
 
                                     </td>
                                 </tr>
+
                             @endforeach
                             </tbody>
                         </table>
@@ -309,6 +310,9 @@
             modal.find('.modal-body #pro_id').val(pro_id);
             modal.find('.modal-body #product_name').val(product_name);
         })
+
+
+
 
     </script>
 
