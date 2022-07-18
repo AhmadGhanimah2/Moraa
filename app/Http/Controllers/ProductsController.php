@@ -17,8 +17,7 @@ class ProductsController extends Controller
     public function index()
     {
         $sections = sections::all();
-        $products = products::all();
-
+        $products = products::where('section_id','2')->get();
         return view('products.products', compact('sections', 'products'));
 
     }
@@ -38,7 +37,6 @@ class ProductsController extends Controller
         ]);
         session()->flash('Add', 'تم اضافة المنتج بنجاح ');
         return redirect('/products');
-
     }
 
     /**
@@ -104,8 +102,11 @@ class ProductsController extends Controller
      * @param products $products
      * @return Response
      */
-    public function destroy(products $products)
+    public function destroy(Request $request)
     {
-        //
+        $Products = Products::findOrFail($request->product_id);
+        $Products->delete();
+        session()->flash('delete', 'تم حذف المنتج بنجاح');
+        return back();
     }
 }

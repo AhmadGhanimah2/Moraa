@@ -97,11 +97,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $i = 0; ?>
-                            @foreach ($products as $Product)
-                                <?php $i++; ?>
+
+                            @foreach ($products as $i=> $Product)
+
                                 <tr>
-                                    <td>{{ $i }}</td>
+                                    <td>{{ $i+1 }}</td>
                                     <td>{{ $Product->Product_name }}</td>
                                     <td>{{ $Product->section->section_name }}</td>
                                     <td>{{ $Product->description }}</td>
@@ -192,7 +192,7 @@
                             <div class="form-group">
                                 <label for="title">اسم المنتج :</label>
 
-                                <input type="hidden" class="form-control" name="pro_id" id="pro_id" value="">
+                                <input type="hidden" class="form-control" name="product_id" id="pro_id" value="">
 
                                 <input type="text" class="form-control" name="Product_name" id="Product_name">
                             </div>
